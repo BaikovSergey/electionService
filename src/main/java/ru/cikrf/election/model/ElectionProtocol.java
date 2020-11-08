@@ -1,16 +1,17 @@
 package ru.cikrf.election.model;
 
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
-public class ElectionProtocol {
+public class ElectionProtocol implements Serializable {
 
     private int id;
     private String electionName;
     private String date;
     private int totalVoters;
-    private int precinctBulletins;
+    private int gotBulletins;
     private int aheadOfScheduleBulletins;
     private int indoorsBulletins;
     private int outsidesBulletins;
@@ -23,11 +24,15 @@ public class ElectionProtocol {
     private int unaccountedBulletins;
     private List<Candidate> candidates;
 
-    public ElectionProtocol(String electionName, String date, int totalVoters, int precinctBulletins, int aheadOfScheduleBulletins, int indoorsBulletins, int outsidesBulletins, int canceledBulletins, int mobileBoxesBulletins, int staticBoxesBulletins, int invalidBulletins, int validBulletins, int lostBulletins, int unaccountedBulletins, List<Candidate> candidates) {
+    public ElectionProtocol() {
+
+    }
+
+    public ElectionProtocol(String electionName, String date, int totalVoters, int gotBulletins, int aheadOfScheduleBulletins, int indoorsBulletins, int outsidesBulletins, int canceledBulletins, int mobileBoxesBulletins, int staticBoxesBulletins, int invalidBulletins, int validBulletins, int lostBulletins, int unaccountedBulletins, List<Candidate> candidates) {
         this.electionName = electionName;
         this.date = date;
         this.totalVoters = totalVoters;
-        this.precinctBulletins = precinctBulletins;
+        this.gotBulletins = gotBulletins;
         this.aheadOfScheduleBulletins = aheadOfScheduleBulletins;
         this.indoorsBulletins = indoorsBulletins;
         this.outsidesBulletins = outsidesBulletins;
@@ -73,12 +78,12 @@ public class ElectionProtocol {
         this.totalVoters = totalVoters;
     }
 
-    public int getPrecinctBulletins() {
-        return precinctBulletins;
+    public int getGotBulletins() {
+        return gotBulletins;
     }
 
-    public void setPrecinctBulletins(int precinctBulletins) {
-        this.precinctBulletins = precinctBulletins;
+    public void setGotBulletins(int gotBulletins) {
+        this.gotBulletins = gotBulletins;
     }
 
     public int getAheadOfScheduleBulletins() {
@@ -176,7 +181,7 @@ public class ElectionProtocol {
         ElectionProtocol protocol = (ElectionProtocol) o;
         return id == protocol.id &&
                 totalVoters == protocol.totalVoters &&
-                precinctBulletins == protocol.precinctBulletins &&
+                gotBulletins == protocol.gotBulletins &&
                 aheadOfScheduleBulletins == protocol.aheadOfScheduleBulletins &&
                 indoorsBulletins == protocol.indoorsBulletins &&
                 outsidesBulletins == protocol.outsidesBulletins &&
@@ -194,6 +199,6 @@ public class ElectionProtocol {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, electionName, date, totalVoters, precinctBulletins, aheadOfScheduleBulletins, indoorsBulletins, outsidesBulletins, canceledBulletins, mobileBoxesBulletins, staticBoxesBulletins, invalidBulletins, validBulletins, lostBulletins, unaccountedBulletins, candidates);
+        return Objects.hash(id, electionName, date, totalVoters, gotBulletins, aheadOfScheduleBulletins, indoorsBulletins, outsidesBulletins, canceledBulletins, mobileBoxesBulletins, staticBoxesBulletins, invalidBulletins, validBulletins, lostBulletins, unaccountedBulletins, candidates);
     }
 }

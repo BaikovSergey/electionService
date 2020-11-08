@@ -6,7 +6,6 @@ import ru.cikrf.election.model.ElectionProtocol;
 import ru.cikrf.election.utils.SimpleCalculation;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 @Repository
@@ -76,7 +75,7 @@ public class MemStore implements Store {
     }
 
     @Override
-    public Collection<ElectionProtocol> findAll() {
+    public List<ElectionProtocol> findAll() {
         return this.protocols;
     }
 }

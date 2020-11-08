@@ -1,14 +1,19 @@
 package ru.cikrf.election.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Candidate {
+public class Candidate implements Serializable {
 
     private String firstName;
     private String secondName;
     private String patronName;
     private int numOfVotes;
     private double percentOfTotal;
+
+    public Candidate() {
+
+    }
 
     public Candidate(String firstName, String secondName, String patronName, int numOfVotes) {
         this.firstName = firstName;

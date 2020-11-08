@@ -3,8 +3,7 @@ package ru.cikrf.election.services;
 import org.springframework.stereotype.Service;
 import ru.cikrf.election.model.ElectionProtocol;
 import ru.cikrf.election.repository.MemStore;
-
-import java.util.Collection;
+import java.util.List;
 
 @Service
 public class ElectionProtocolService {
@@ -27,7 +26,7 @@ public class ElectionProtocolService {
     public ElectionProtocol findById (int id) {
         return this.memStore.findById(id);
     }
-    public Collection<ElectionProtocol> findAll() {
+    public List<ElectionProtocol> findAll() {
         return this.memStore.findAll();
     }
 
