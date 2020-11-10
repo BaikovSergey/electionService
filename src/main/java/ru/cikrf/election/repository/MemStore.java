@@ -16,34 +16,7 @@ public class MemStore implements Store {
     private SimpleCalculation calculation = new SimpleCalculation();
 
     public MemStore() {
-        Candidate first = new Candidate("Батехтин", "Виктор",
-                "Васильевич", 826);
-        Candidate second = new Candidate("Никитин", "Андрей",
-                "Андреевич", 975);
-        Candidate third = new Candidate("Понамарев", "Сергей",
-                "Викторович", 729);
-        Candidate forth = new Candidate("Уйба", "Владимир",
-                "Викторович", 7589);
-        List<Candidate> list = new ArrayList<>();
-        list.add(first);
-        list.add(second);
-        list.add(third);
-        list.add(forth);
-        create(new ElectionProtocol("Выборы главы республики Коми",
-                "01.01.2020",
-                62052,
-                45950,
-                6098,
-                4559,
-                228,
-                35064,
-                6316,
-                4554,
-                751,
-                10119,
-                2,
-                1,
-                list));
+
     }
 
     @Override
